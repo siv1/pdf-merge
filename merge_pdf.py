@@ -3,7 +3,7 @@ from PyPDF2 import PdfFileWriter, PdfFileReader, PdfFileMerger
 
 def merge_pdfs(first_pdf, second_pdf):
     """
-    Merge title page and user guide body.
+    Merge PDFs by appending.
     At the moment, only have functionality for
     2 PDF files, intend to expand this
     """
@@ -17,4 +17,4 @@ def merge_pdfs(first_pdf, second_pdf):
 first_pdf = 'your_pdf_name.pdf'
 second_pdf = 'your_pdf_name.pdf'
 
-merge_title(title_pdf, body_pdf)
+merge_pdfs(title_pdf, body_pdf)
