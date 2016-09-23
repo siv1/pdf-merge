@@ -5,8 +5,9 @@ from PyPDF2 import PdfFileWriter, PdfFileReader
 # Open original document
 output = PdfFileWriter()
 input1 = PdfFileReader(open("orig_doc.pdf", "rb"))
-# Add letterhead
-for i in range(0, 5):
+pages = getNumPages(input1)
+# Add letterhead to each page in document
+for i in range(0, pages - 1):
     mod_page = input1.getPage(i)
     watermark = PdfFileReader(open("letterhead_name.pdf", "rb"))
     mod_page.mergePage(watermark.getPage(0))
